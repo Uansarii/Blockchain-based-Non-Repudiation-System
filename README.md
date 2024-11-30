@@ -1,2 +1,7 @@
 # Blockchain based Non-repudiation
 Blockchain’s decentralized, immutable ledger system, presents an opportunity to redefine non-repudiation in digital transactions, offering a transparent and indisputable record of actions, agreements, or exchanges.
+
+#Security Features
+1. Public Key Cryptography: For public key cryptography we are using the ECCDA with the P-384 curve and SHA-384. The private key is used to sign the digital signature of the data being broadcasted, and on reception, the same is verified and then stored as a record using the public key of the sender. Similarly all the message acknowledgements are also signed and verified in the same manner.
+2. Decentralized and Distributed Database: Used the open source Gun.js library for the implementation. It uses multiple relay servers to provide further availability and reliability to the network.
+3. Blockchain: The blockchain is a custom made blockchain, the transactions are called subblocks and after 20 subblocks the block is considered full and all the subsequent subblocks are stored in the next block. The “Proof” is calculated using the Proof of Stake Algorithm (PoS). In this algorithm all the peers initially submit a certain stake as collateral to the blockchain. To calculate the Work the user with the highest stake is given preference and on the correct determination of the nonce, the stake is increased by a certain amount. In case, the nonce generated is fraudulent, the peer is penalized
